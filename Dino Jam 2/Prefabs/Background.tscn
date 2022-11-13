@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/WrapHorizontal.cs" type="Script" id=1]
+[ext_resource path="res://Images/cga_2back_dungeon/1_2.png" type="Texture" id=2]
+[ext_resource path="res://Images/cga_2back_dungeon/1_4.png" type="Texture" id=3]
+[ext_resource path="res://Images/cga_2back_dungeon/1_5.png" type="Texture" id=4]
+[ext_resource path="res://Images/cga_2back_dungeon/1_3.png" type="Texture" id=5]
+[ext_resource path="res://Images/cga_2back_dungeon/1_1.png" type="Texture" id=6]
+
+[node name="Background" type="Node2D"]
+position = Vector2( 479, 190 )
+scale = Vector2( 0.25, 0.25 )
+z_index = -100
+script = ExtResource( 1 )
+Speed = 80.0
+Width = 999.0
+Multiplier = 3.0
+
+[node name="11" type="Sprite" parent="."]
+modulate = Color( 0.145098, 0.145098, 0.145098, 1 )
+texture = ExtResource( 6 )
+
+[node name="12" type="Sprite" parent="."]
+modulate = Color( 0.145098, 0.145098, 0.145098, 1 )
+texture = ExtResource( 2 )
+
+[node name="13" type="Sprite" parent="."]
+modulate = Color( 0.145098, 0.145098, 0.145098, 1 )
+texture = ExtResource( 5 )
+
+[node name="14" type="Sprite" parent="."]
+modulate = Color( 0.145098, 0.145098, 0.145098, 1 )
+texture = ExtResource( 3 )
+
+[node name="15" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0.145098, 0.145098, 0.145098, 1 )
+texture = ExtResource( 4 )

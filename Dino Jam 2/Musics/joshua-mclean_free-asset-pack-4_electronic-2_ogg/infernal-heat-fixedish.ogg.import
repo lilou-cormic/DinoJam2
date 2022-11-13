@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/infernal-heat-fixedish.ogg-7b1ddf5e35cb52fec2fc696f934d5e58.oggstr"
+
+[deps]
+
+source_file="res://Musics/joshua-mclean_free-asset-pack-4_electronic-2_ogg/infernal-heat-fixedish.ogg"
+dest_files=[ "res://.import/infernal-heat-fixedish.ogg-7b1ddf5e35cb52fec2fc696f934d5e58.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

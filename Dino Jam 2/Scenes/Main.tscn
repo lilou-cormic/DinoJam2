@@ -1,36 +1,63 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Prefabs/Tunnel/Tunnel1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Images/flappy-dragon-sprite-sheets/1-open.png" type="Texture" id=3]
-[ext_resource path="res://Images/flappy-dragon-sprite-sheets/1.png" type="Texture" id=8]
+[ext_resource path="res://Prefabs/King.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Musics/joshua-mclean_free-asset-pack-4_electronic-2_ogg/infernal-heat-fixedish.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Prefabs/Tunnel/Tunnel2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/GameManager.cs" type="Script" id=7]
+[ext_resource path="res://Scripts/ScoreDisplay.cs" type="Script" id=8]
+[ext_resource path="res://Images/Platformer Assets Base/hud_gem_blue.png" type="Texture" id=9]
 [ext_resource path="res://Prefabs/Lava.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Theme.tres" type="Theme" id=11]
 [ext_resource path="res://Images/Platformer Assets Base/hud_heartEmpty.png" type="Texture" id=12]
 [ext_resource path="res://Images/Platformer Assets Base/hud_heartFull.png" type="Texture" id=13]
+[ext_resource path="res://Scripts/GameOverOnContact.cs" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 353, 15.25 )
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 385, 17 )
 
 [node name="Main" type="Node2D"]
 
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
 [node name="Ceiling" type="StaticBody2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
 position = Vector2( 325, -15.25 )
 shape = SubResource( 1 )
 
+[node name="Backgrounds" type="Node2D" parent="."]
+
+[node name="Background" parent="Backgrounds" instance=ExtResource( 6 )]
+
+[node name="Background2" parent="Backgrounds" instance=ExtResource( 6 )]
+position = Vector2( 1478, 190 )
+
+[node name="Background3" parent="Backgrounds" instance=ExtResource( 6 )]
+position = Vector2( 2477, 190 )
+
+[node name="LavaFloor" type="Area2D" parent="."]
+position = Vector2( 0, 325 )
+collision_layer = 4
+script = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LavaFloor"]
+position = Vector2( 350, 18 )
+shape = SubResource( 2 )
+
 [node name="Lava" parent="." instance=ExtResource( 10 )]
 
+[node name="King" parent="." instance=ExtResource( 3 )]
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 250, 180 )
+position = Vector2( 235, 183 )
 
 [node name="HudHeartEmpty" type="Sprite" parent="."]
 visible = false
@@ -50,15 +77,39 @@ position = Vector2( 37, 28 )
 z_index = 10
 texture = ExtResource( 13 )
 
-[node name="Tunnel1" parent="." instance=ExtResource( 2 )]
+[node name="Tunnels" type="Node2D" parent="."]
 
-[node name="King" type="StaticBody2D" parent="."]
+[node name="Tunnel1" parent="Tunnels" instance=ExtResource( 2 )]
+position = Vector2( 210, 0 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="King"]
-polygon = PoolVector2Array( 192, -1, 149, 126, 156, 162, 156, 209, 152, 244, 140, 279, 123, 307, 99, 331, 73, 347, 52, 356, 27, 363, -9, 370, -10, -1 )
+[node name="Tunnel2" parent="Tunnels" instance=ExtResource( 5 )]
+position = Vector2( 840, 0 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="King"]
-position = Vector2( -206, 183 )
-frames = SubResource( 2 )
-frame = 1
-playing = true
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="HUD" type="Control" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+theme = ExtResource( 11 )
+
+[node name="Control" type="Control" parent="HUD"]
+anchor_left = 0.844
+anchor_top = 0.011
+anchor_right = 1.0
+anchor_bottom = 0.111
+
+[node name="HudGemBlue" type="Sprite" parent="HUD/Control"]
+texture = ExtResource( 9 )
+centered = false
+
+[node name="GemCountText" type="Label" parent="HUD/Control"]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "000"
+valign = 1
+script = ExtResource( 8 )
+
+[connection signal="body_entered" from="LavaFloor" to="LavaFloor" method="OnBodyEntered"]

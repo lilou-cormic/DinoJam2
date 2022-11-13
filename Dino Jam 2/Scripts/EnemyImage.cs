@@ -2,8 +2,8 @@
 
 public class EnemyImage : Sprite
 {
-    [Export] Texture MadImage;
-    [Export] Texture SadImage;
+    [Export] Texture MadImage = null;
+    [Export] Texture SadImage = null;
 
     public override void _PhysicsProcess(float delta)
     {
