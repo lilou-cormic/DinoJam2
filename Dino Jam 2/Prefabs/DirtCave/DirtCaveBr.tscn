@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/WrapHorizontal.cs" type="Script" id=1]
+[ext_resource path="res://Images/Platformer Assets Requests/dirtCaveBR.png" type="Texture" id=2]
+
+[node name="DirtCaveBr" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( -140, -325 )
+polygon = PoolVector2Array( 106, 360, 129, 346, 138, 319, 161, 313, 175, 290, 175, 360 )

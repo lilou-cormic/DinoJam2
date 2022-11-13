@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Images/Platformer Assets Base/liquidLavaTop_mid2.png" type="Texture" id=1]
+[ext_resource path="res://Images/Platformer Assets Base/liquidLavaTop_mid.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/WrapHorizontal.cs" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 385, 17 )
+
+[node name="Lava" type="Node2D"]
+position = Vector2( 0, 325 )
+z_index = -5
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 70, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 140, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+position = Vector2( 210, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+position = Vector2( 280, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite6" type="AnimatedSprite" parent="."]
+position = Vector2( 350, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite7" type="AnimatedSprite" parent="."]
+position = Vector2( 420, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite8" type="AnimatedSprite" parent="."]
+position = Vector2( 490, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite9" type="AnimatedSprite" parent="."]
+position = Vector2( 560, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite10" type="AnimatedSprite" parent="."]
+position = Vector2( 630, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite11" type="AnimatedSprite" parent="."]
+position = Vector2( 700, 0 )
+frames = SubResource( 1 )
+frame = 1
+speed_scale = 0.3
+playing = true
+script = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 350, 18 )
+shape = SubResource( 2 )

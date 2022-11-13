@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/liquidLavaTop.png-c3fce3f1d09c2b19798c803bc84b1478.stex"
+path="res://.import/1-top.png-ef0f788f5ccbcd07ee7c4dfbececf6a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Platformer Assets Base/liquidLavaTop.png"
-dest_files=[ "res://.import/liquidLavaTop.png-c3fce3f1d09c2b19798c803bc84b1478.stex" ]
+source_file="res://Images/flappy-dragon-sprite-sheets/1-top.png"
+dest_files=[ "res://.import/1-top.png-ef0f788f5ccbcd07ee7c4dfbececf6a6.stex" ]
 
 [params]
 
