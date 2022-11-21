@@ -6,7 +6,7 @@ public class GameManager : Node2D
 
     private float _speedMultiplier = 2;
 
-    public static float SpeedMultiplier => _instance._speedMultiplier;
+    public static float SpeedMultiplier => _instance?._speedMultiplier ?? 1;
 
     public GameManager()
     {

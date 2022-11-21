@@ -14,12 +14,12 @@
 [ext_resource path="res://Images/Platformer Assets Base/hud_heartEmpty.png" type="Texture" id=12]
 [ext_resource path="res://Images/Platformer Assets Base/hud_heartFull.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/GameOverOnContact.cs" type="Script" id=14]
-[ext_resource path="res://Prefabs/Tunnel/Tunnel3.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Prefabs/Tunnel/Tunnel5.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scripts/TunnelFactory.cs" type="Script" id=16]
 [ext_resource path="res://Prefabs/Tunnel/Tunnel4.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Sounds/Pickup_Coin13.wav" type="AudioStream" id=18]
 [ext_resource path="res://Scripts/GemSoundPlayer.cs" type="Script" id=19]
-[ext_resource path="res://Prefabs/Tunnel/Tunnel5.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Prefabs/Tunnel/Tunnel3.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 353, 15.25 )
@@ -85,7 +85,7 @@ texture = ExtResource( 13 )
 
 [node name="Tunnels" type="Node2D" parent="."]
 script = ExtResource( 16 )
-TunnelPrefabs = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 20 ) ]
+TunnelPrefabs = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 15 ) ]
 
 [node name="Tunnel1" parent="Tunnels" instance=ExtResource( 2 )]
 position = Vector2( 630, 0 )

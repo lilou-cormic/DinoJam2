@@ -2,8 +2,6 @@
 
 public class GemSoundPlayer : AudioStreamPlayer
 {
-    private AudioStreamPlayer _player;
-
     private static GemSoundPlayer _instance;
 
     public GemSoundPlayer()
