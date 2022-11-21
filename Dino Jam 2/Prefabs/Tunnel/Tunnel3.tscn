@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveSpikeTop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveUr.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveBottom.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveUl.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveBl.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveBr.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Prefabs/DirtCave/SandCenter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveBottomFlip.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/Gem.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/Tunnel.cs" type="Script" id=11]
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveTop.tscn" type="PackedScene" id=12]
+
+[node name="Tunnel3" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="Enemy" parent="." instance=ExtResource( 9 )]
+position = Vector2( 503, 260 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 205, 54 )
+rotation = 3.14159
+
+[node name="TopRocks" type="Node2D" parent="."]
+
+[node name="DirtCaveBr2" parent="TopRocks" instance=ExtResource( 6 )]
+position = Vector2( 440, 35 )
+
+[node name="SandCenter" parent="TopRocks" instance=ExtResource( 7 )]
+position = Vector2( 510, 35 )
+
+[node name="SandCenter3" parent="TopRocks" instance=ExtResource( 7 )]
+position = Vector2( 574.5, 35 )
+scale = Vector2( 0.842857, 1 )
+
+[node name="DirtCaveUr" parent="TopRocks" instance=ExtResource( 2 )]
+position = Vector2( 440, 105 )
+
+[node name="DirtCaveUl" parent="TopRocks" instance=ExtResource( 4 )]
+position = Vector2( 510, 105 )
+
+[node name="DirtCaveSpikeTop" parent="TopRocks" instance=ExtResource( 1 )]
+position = Vector2( 570, 105 )
+
+[node name="DirtCaveTop" parent="TopRocks" instance=ExtResource( 12 )]
+position = Vector2( 72, 17 )
+
+[node name="BottomRocks" type="Node2D" parent="."]
+
+[node name="DirtCaveBr" parent="BottomRocks" instance=ExtResource( 6 )]
+position = Vector2( 190, 325 )
+
+[node name="SandCenter2" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 260, 325 )
+
+[node name="SandCenter4" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 330, 325 )
+
+[node name="DirtCaveBl" parent="BottomRocks" instance=ExtResource( 5 )]
+position = Vector2( 400, 325 )
+
+[node name="DirtCaveBottom" parent="BottomRocks" instance=ExtResource( 3 )]
+position = Vector2( 260, 273 )
+
+[node name="DirtCaveBottom2" parent="BottomRocks" instance=ExtResource( 8 )]
+position = Vector2( 330, 273 )
+
+[node name="Gems" type="Node2D" parent="."]
+
+[node name="Gem" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 488, 165 )
+
+[node name="Gem2" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 198, 190 )
+
+[node name="Gem3" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 301, 173 )
+
+[node name="Gem4" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 340, 64 )
+
+[node name="Gem5" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 356, 212 )
+
+[node name="DirtCaveUl" parent="." instance=ExtResource( 4 )]
+position = Vector2( 622, 35 )
+scale = Vector2( 0.514286, 1 )

@@ -1,24 +1,39 @@
 using Godot;
-using System;
 
-public class Enemy : WrapHorizontal
+public class Enemy : Node2D
 {
+    private bool goingDown = false;
+
+    public override void _Ready()
+    {
+        if (GlobalRotation == 0)
+            GlobalPosition = new Vector2(GlobalPosition.x, 440);
+        else
+            QueueFree();
+    }
+
     public override void _PhysicsProcess(float delta)
     {
-        base._PhysicsProcess(delta);
+        if (GlobalPosition.x > -70)
+        {
+            if (GlobalPosition.x < 250)
+            {
+                if (GlobalPosition.y < 440)
+                {
+                    goingDown = true;
 
-        if (GlobalPosition.x < 250)
-        {
-            if (GlobalPosition.y < 440)
-            {
-                GlobalPosition += Vector2.Down * 300 * delta;
+                    GlobalPosition += Vector2.Down * 300 * delta * GameManager.SpeedMultiplier;
+                }
             }
-        }
-        else
-        {
-            if (GlobalPosition.y > 260 && GlobalPosition.x < 560)
+            else if (!goingDown)
             {
-                GlobalPosition += Vector2.Up * 400 * delta;
+                if (GlobalPosition.y > 260 && GlobalPosition.x < 560)
+                {
+                    GlobalPosition += Vector2.Up * 400 * delta * GameManager.SpeedMultiplier;
+
+                    if (GlobalPosition.y < 260)
+                        GlobalPosition = new Vector2(GlobalPosition.x, 260);
+                }
             }
         }
     }
