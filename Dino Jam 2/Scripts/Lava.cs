@@ -1,6 +1,6 @@
 ﻿public class Lava : WrapHorizontal
 {
-    public override void _Ready()
+    public Lava()
     {
         Width = 70;
         Multiplier = 11;
