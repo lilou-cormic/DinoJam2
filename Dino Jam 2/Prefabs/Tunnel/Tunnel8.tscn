@@ -1,0 +1,165 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveBottom.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveBl.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Prefabs/DirtCave/SandCenter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Prefabs/DirtCave/DirtCaveBottomFlip.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prefabs/Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/Gem.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/Tunnel.cs" type="Script" id=11]
+
+[node name="Tunnel8" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -812, 185 )
+
+[node name="TopRocks" type="Node2D" parent="."]
+
+[node name="BottomRocks" type="Node2D" parent="."]
+
+[node name="SandCenter2" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 176, 325 )
+
+[node name="SandCenter4" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 246, 325 )
+
+[node name="SandCenter3" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 36, 325 )
+
+[node name="SandCenter5" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 106, 325 )
+
+[node name="SandCenter6" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 176, 255 )
+
+[node name="SandCenter7" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 246, 255 )
+
+[node name="SandCenter8" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 36, 255 )
+
+[node name="SandCenter9" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 106, 255 )
+
+[node name="SandCenter10" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 176, 185 )
+
+[node name="SandCenter11" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 246, 185 )
+
+[node name="SandCenter12" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 36, 185 )
+
+[node name="SandCenter13" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 106, 185 )
+
+[node name="SandCenter19" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 456, 255 )
+
+[node name="SandCenter20" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 526, 255 )
+
+[node name="SandCenter21" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 316, 255 )
+
+[node name="SandCenter22" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 386, 255 )
+
+[node name="SandCenter23" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 456, 185 )
+
+[node name="SandCenter24" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 526, 185 )
+
+[node name="SandCenter27" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 596, 255 )
+
+[node name="SandCenter25" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 316, 185 )
+
+[node name="SandCenter26" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 386, 185 )
+
+[node name="SandCenter14" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 456, 325 )
+
+[node name="SandCenter15" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 526, 325 )
+
+[node name="SandCenter16" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 316, 325 )
+
+[node name="SandCenter17" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 386, 325 )
+
+[node name="SandCenter18" parent="BottomRocks" instance=ExtResource( 7 )]
+position = Vector2( 596, 325 )
+
+[node name="DirtCaveBottom" parent="BottomRocks" instance=ExtResource( 3 )]
+position = Vector2( 36, 115 )
+
+[node name="DirtCaveBottom2" parent="BottomRocks" instance=ExtResource( 8 )]
+position = Vector2( 106, 115 )
+
+[node name="DirtCaveBottom3" parent="BottomRocks" instance=ExtResource( 3 )]
+position = Vector2( 176, 115 )
+
+[node name="DirtCaveBottom4" parent="BottomRocks" instance=ExtResource( 8 )]
+position = Vector2( 246, 115 )
+
+[node name="DirtCaveBottom5" parent="BottomRocks" instance=ExtResource( 3 )]
+position = Vector2( 316, 115 )
+
+[node name="DirtCaveBottom6" parent="BottomRocks" instance=ExtResource( 8 )]
+position = Vector2( 386, 115 )
+
+[node name="DirtCaveBottom7" parent="BottomRocks" instance=ExtResource( 3 )]
+position = Vector2( 456, 115 )
+
+[node name="DirtCaveBottom8" parent="BottomRocks" instance=ExtResource( 8 )]
+position = Vector2( 526, 115 )
+
+[node name="DirtCaveBl" parent="BottomRocks" instance=ExtResource( 5 )]
+position = Vector2( 596, 185 )
+
+[node name="Gems" type="Node2D" parent="."]
+
+[node name="Gem" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 367, 62 )
+
+[node name="Gem2" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 222, 30 )
+
+[node name="Gem3" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 99, 28 )
+
+[node name="Gem9" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 124, 80 )
+
+[node name="Gem4" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 488, 37 )
+
+[node name="Gem5" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 279, 82 )
+
+[node name="Gem10" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 411, 27 )
+
+[node name="Gem11" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 193, 72 )
+
+[node name="Gem12" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 419, 93 )
+
+[node name="Gem13" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 304, 34 )
+
+[node name="Gem6" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 529, 83 )
+
+[node name="Gem7" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 39, 54 )
+
+[node name="Gem8" parent="Gems" instance=ExtResource( 10 )]
+position = Vector2( 588, 55 )

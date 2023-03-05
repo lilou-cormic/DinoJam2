@@ -44,12 +44,14 @@ public class TunnelFactory : Node2D
 
     private void LoadQueue()
     {
-        List<int> indices = GD.Range(Math.Min(_count + 3, TunnelPrefabs.Length)).ToList();
+        List<int> indices = GD.Range(Math.Min(_count + 2, TunnelPrefabs.Length)).ToList();
 
         int prev = _queue.Any() ? _queue.Peek() : 2;
         int i;
 
-        while (indices.Count > 1)
+        int count = 0;
+
+        while (indices.Count > 1 && count < 2)
         {
             i = _random.Next(0, indices.Count);
 
@@ -60,9 +62,14 @@ public class TunnelFactory : Node2D
                 indices.RemoveAt(i);
 
                 prev = i;
+
+                count++;
             }
         }
 
-        _queue.Enqueue(indices[0]);
+        if (count < 2)
+        {
+            _queue.Enqueue(indices[0]);
+        }
     }
 }
