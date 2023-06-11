@@ -26,14 +26,27 @@ public class Player : KinematicBody2D
             velocity += Vector2.Up * 300;
             GlobalRotationDegrees = normalRotation - 30;
         }
+        else if (Input.IsActionPressed("down"))
+        {
+            velocity += Vector2.Down * 200;
+            GlobalRotationDegrees = normalRotation + 30;
+        }
         else
         {
             velocity += Vector2.Down * 100;
             GlobalRotationDegrees = normalRotation;
         }
 
+        if (Input.IsActionPressed("right"))
+        {
+            if (GlobalPosition.x < 650)
+                GlobalPosition += Vector2.Right * delta * 100;
+        }
+        else if (Input.IsActionPressed("left"))
+        {
+            GlobalPosition += Vector2.Left * delta * 100;
+        }
+
         MoveAndSlide(velocity);
     }
-
-
 }

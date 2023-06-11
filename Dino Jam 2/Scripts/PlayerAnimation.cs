@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public class PlayerAnimation : AnimatedSprite
 {
@@ -12,13 +11,19 @@ public class PlayerAnimation : AnimatedSprite
 
     public override void _PhysicsProcess(float delta)
     {
-        if (Input.IsActionPressed("fly"))
+        float speed = _normalSpeed * GameManager.SpeedMultiplier * 0.5f;
+
+        if (Input.IsActionPressed("fly") || Input.IsActionPressed("right") || Input.IsActionPressed("down"))
         {
-            SpeedScale = _normalSpeed * 3;
+            SpeedScale = speed * 3;
+        }
+        else if (Input.IsActionPressed("left"))
+        {
+            SpeedScale = speed * 0.75f;
         }
         else
         {
-            SpeedScale = _normalSpeed;
+            SpeedScale = speed;
         }
     }
 }

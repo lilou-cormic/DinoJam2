@@ -22,7 +22,7 @@ public class Enemy : Node2D
                 {
                     goingDown = true;
 
-                    GlobalPosition += Vector2.Down * 300 * delta * GameManager.SpeedMultiplier;
+                    GlobalPosition += Vector2.Down * 100 * delta * GameManager.SpeedMultiplier;
                 }
             }
             else if (!goingDown)
